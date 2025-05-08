@@ -1,0 +1,61 @@
+//============ Noted to improve urself ==============//
+
+- it's wrong port but still waste time
+- Make secure database with place and password_hash()
+- Not sure with if else endif $SESSION syntax
+- when we call Variable and define PHP 
+- header syntax
+- call SESSION_START() redirect when login already, add condiction PHP_SESSION_NONE, session_status
+- include header after process PHP end 
+
+// =========== props ================//
+- $stmt= $con->prepare($sql); //  sends your SQL to the database and prepares a statement ($stmt) you can use to get the results.
+- $stmt->execute();   // executes the prepared SQL query. we use it with prepare()
+- if u want to use query u don't have to use execute()
+
+
+// ================= FETCH_ASSOC VS FETCH_OBJ ==================//
+
+- FETCH_ASSOC and FETCH_OBJ are two different ways to fetch rows from a database query result. Here's the difference:
+  FETCH_ASSOC:Fetches the result as an associative array
+  ➔ You access data like $row['column_name'].  example property-detail.php
+
+  FETCH_OBJ:Fetches the result as an object.
+   ➔ You access data like $row->column_name.
+
+- $props = $stmt->fetch(PDO::FETCH_ASSOC); // fetch one row -> $props['column_name'].
+- $props = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetch all row ->$props->column_name
+
+- var_dump("$props"); // used for echo all arrys or objects 
+
+//=========== What that I didn't finish ====================//
+
+- I didn't finish search router
+- propery detail seem like wrong logic 
+- add more feature like when click detial route to login 
+- Delete Fav like wrong logic
+
+
+// ================= DATABASE Noted ===================//
+
+- PDO (PHP Data Objects):
+  ➔ It's a database access layer in PHP that lets you connect to many different databases (MySQL, PostgreSQL, SQLite, etc.) using the same code style.
+  ➔ It's flexible and safer (supports prepared statements easily
+
+- MySQLi (MySQL Improved):
+  ➔ It’s a specific PHP extension just for MySQL databases.
+  ➔ It also supports prepared statements, but only works with MySQL.
+
+- JOIN Table in favorite.php
+
+- Noted syntax '$name'  ->  WHERE home_type = '$name'  ";
+- Assecc as array syntax ->  WHERE home_type= '".$detail["home_type"]."'"; 
+
+// ==================  MORE RESEARCH Syntax=====================//
+
+- propery-detail : echo "<script>window.location.href='".base_url."/property-details.php?id=$prop_id' </script>";
+- Syntaxt :  WHERE prop_id='$id' AND user_id ='".$_SESSION["id"]."'"; 
+                                                                        user_id='$_SESSION[id]'   ";        // noted syntax
+                                                                        user_id={$_SESSION['id']} ";
+                                                                        user_id=" . $_SESSION['id'];
+
